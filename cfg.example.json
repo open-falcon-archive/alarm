@@ -14,14 +14,14 @@
         "maxIdle": 5,
         "highQueues": [
             "event:p0",
-            "event:p1"
-        ],
-        "lowQueues": [
+            "event:p1",
             "event:p2",
             "event:p3",
             "event:p4",
             "event:p5",
             "event:p6"
+        ],
+        "lowQueues": [
         ],
         "userSmsQueue": "/queue/user/sms",
         "userMailQueue": "/queue/user/mail"
