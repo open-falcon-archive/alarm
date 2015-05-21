@@ -5,7 +5,7 @@ judge把报警event写入redis，alarm从redis读取event，做相应处理，�
 生成的短信、邮件写入queue，sender模块专门负责来发送。
 
 
-## install
+## Installation
 
 ```bash
 # set $GOPATH and $GOROOT
@@ -18,7 +18,7 @@ go get ./...
 ./control start
 ```
 
-## configuration
+## Configuration
 
 - uicToken: 留空即可
 - http: 监听的http端口
