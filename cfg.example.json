@@ -18,10 +18,10 @@
             "event:p2",
             "event:p3",
             "event:p4",
-            "event:p5",
-            "event:p6"
+            "event:p5"
         ],
         "lowQueues": [
+            "event:p6"
         ],
         "userSmsQueue": "/queue/user/sms",
         "userMailQueue": "/queue/user/mail"
