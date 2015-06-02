@@ -11,6 +11,10 @@ import (
 
 func ReadHighEvent() {
 	queues := g.Config().Redis.HighQueues
+	if len(queues) == 0 {
+		return
+	}
+
 	for {
 		event, err := popEvent(queues)
 		if err != nil {
@@ -23,6 +27,10 @@ func ReadHighEvent() {
 
 func ReadLowEvent() {
 	queues := g.Config().Redis.LowQueues
+	if len(queues) == 0 {
+		return
+	}
+
 	for {
 		event, err := popEvent(queues)
 		if err != nil {
