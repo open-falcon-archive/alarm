@@ -3,7 +3,7 @@
     "uicToken": "",
     "http": {
         "enabled": true,
-        "listen": "0.0.0.0:6060"
+        "listen": "0.0.0.0:9912"
     },
     "queue": {
         "sms": "/sms",
