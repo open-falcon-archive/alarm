@@ -45,11 +45,6 @@ func (this *MainController) Index() {
 		this.TplNames = "index.html"
 	}()
 
-	if len(events) == 0 {
-		this.Data["Events"] = []*g.EventDto{}
-		return
-	}
-
 	count := len(events)
 	if count == 0 {
 		this.Data["Events"] = []*g.EventDto{}

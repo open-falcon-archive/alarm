@@ -12,6 +12,7 @@ import (
 
 func HandleCallback(event *model.Event, action *api.Action) {
 
+	// falcon,dinp
 	teams := action.Uic
 	phones := []string{}
 	mails := []string{}
