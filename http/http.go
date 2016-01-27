@@ -2,10 +2,11 @@ package http
 
 import (
 	"fmt"
-	"github.com/astaxie/beego"
-	"github.com/open-falcon/alarm/g"
 	"log"
 	_ "net/http/pprof"
+
+	"github.com/astaxie/beego"
+	"github.com/open-falcon/alarm/g"
 )
 
 func configRoutes() {
@@ -59,12 +60,6 @@ func Start() {
 	addr := g.Config().Http.Listen
 	if addr == "" {
 		return
-	}
-
-	if g.Config().Debug {
-		beego.RunMode = "dev"
-	} else {
-		beego.RunMode = "prod"
 	}
 
 	beego.Run(addr)

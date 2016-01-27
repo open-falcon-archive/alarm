@@ -2,12 +2,13 @@ package http
 
 import (
 	"fmt"
-	"github.com/astaxie/beego"
-	"github.com/open-falcon/alarm/g"
-	"github.com/toolkits/file"
 	"sort"
 	"strings"
 	"time"
+
+	"github.com/astaxie/beego"
+	"github.com/open-falcon/alarm/g"
+	"github.com/toolkits/file"
 )
 
 type MainController struct {
@@ -27,11 +28,11 @@ func (this *MainController) Workdir() {
 }
 
 func (this *MainController) ConfigReload() {
-	remoteAddr := this.Ctx.Input.Request.RemoteAddr
+	remoteAddr := this.Ctx.Request.RemoteAddr
 	if strings.HasPrefix(remoteAddr, "127.0.0.1") {
 		g.ParseConfig(g.ConfigFile)
 		this.Data["json"] = g.Config()
-		this.ServeJson()
+		this.ServeJSON()
 	} else {
 		this.Ctx.WriteString("no privilege")
 	}
@@ -42,7 +43,7 @@ func (this *MainController) Index() {
 
 	defer func() {
 		this.Data["Now"] = time.Now().Unix()
-		this.TplNames = "index.html"
+		this.TplName = "index.html"
 	}()
 
 	count := len(events)
